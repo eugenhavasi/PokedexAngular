@@ -1,0 +1,205 @@
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+    justify-content: center;
+  background-image: url("/assets/pallet_town.png");
+  background-size: cover;
+}
+
+
+.main-whiteboard {
+    max-width: auto;
+    min-height: auto;
+    background: rgba(255,255,255,1);
+    width: 70%;
+    overflow: auto
+}
+
+._detailsLoadingPokeballContainer {
+  height: 500px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._detailsLoadingPokeball {
+  height: 200px;
+}
+
+._main-whiteboard-main-row {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+._name-row {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+._name-col {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  text-transform:capitalize; 
+  font-size: x-large;     
+  font-weight: bolder;
+  font-family:Arial, Helvetica, sans-serif;      
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+._back-arrow-row {
+  display: flex;
+  justify-content: left;
+  padding-left: 4px;
+}
+
+._pic-type-abilities-stats-row {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+._type-abilities-stats-row {
+  display: flex;
+  justify-content: center;
+}
+
+._type-abilities-stats-col {
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  align-items: center;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.name-picture-types-row {
+
+  margin: 5px;
+  height: 80%;
+  background: rgba(255,255,255,1);
+}
+
+.abilites-row {
+  margin: 5px;
+  height: 20%;
+  background: rgba(255,255,255,1);
+}
+
+.pokemon-name {
+ 
+  text-transform: capitalize; 
+  text-align: center;
+  font-size: x-large;
+  display: flex;
+  align-content: space-around;
+}
+
+.pokemon-picture {
+ 
+
+  padding-top: 10px;
+
+
+  
+   
+  }
+
+  .picture-and-types {
+    
+    display: flex;
+    justify-content:center;
+    
+  }
+
+  .types-position {
+   
+    display: flex;
+    justify-content: space-around;
+    
+  }
+
+  
+
+  .abilites-title {
+    text-transform: capitalize; 
+    text-align: center;
+    font-size: large
+  }
+
+  .ability {
+    background: #a8a878;
+    text-transform: capitalize;
+    border-radius: 9px;
+    position: relative;
+    display: block;
+      float: left;
+     padding: 4px;
+      text-align: center;
+      margin: 0.1em;
+     
+      flex-wrap: nowrap;
+    
+  }
+
+
+  .stats-card {
+   
+    background: #F2F2F2;
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 .78125% 10px;
+  }
+
+  .abilities-card {
+   justify-content: space-between;
+  }
+
+.type {
+  text-transform: capitalize;
+  position: relative;
+  font-size: large;
+    text-align: center;
+    margin: 0.1em;
+   height: 100%;
+    flex-wrap: nowrap;
+
+    align-content: space-around;
+  
+}
+
+
+

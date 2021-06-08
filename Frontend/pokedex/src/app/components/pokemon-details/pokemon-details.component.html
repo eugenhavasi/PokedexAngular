@@ -1,0 +1,100 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-------------PALLET TOWN BACKGROUND------------->
+
+<div class="bg">
+
+    <!-------------MAIN WHITEBOARD------------->
+
+    <div class="main-whiteboard">
+
+        <!-------------SPINNGING POKEBALL GIF------------->
+
+        <div fxLayout="row wrap">
+            <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <ng-container *ngIf="detailsLoading">
+                    <div class="_detailsLoadingPokeballContainer">
+                        <img src="assets/pokeball_gif.gif" class="_detailsLoadingPokeball">
+                    </div>
+                </ng-container>
+            </div>
+
+            <!-------------MAIN WHITEBOARD MAIN ROW------------->
+
+            <ng-container *ngIf="!detailsLoading">
+                <div fxLayout="row wrap" class="_main-whiteboard-main-row">
+
+                    <!-------------MAIN WHITEBOARD MAIN COL------------->
+
+                    <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+
+                        <!-------------POKEMON NAME/ORDER------------->
+
+                        <div fxLayout="row wrap">
+                            <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                                <div fxLayout="row wrap" class="_name-row">
+                                    <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%" class="_name-col">
+                                        <div style="padding-right: 2.5px;">
+                                            {{pokemon?.name}}
+                                        </div>
+                                        <div style="color: #a4acaf; padding-left: 2.5px;">
+                                            <div *ngIf="pokemon?.order > 0 && pokemon?.order <= 9">
+                                                #00{{pokemon?.order}}
+                                            </div>
+                                            <div *ngIf="pokemon?.order >= 10 && pokemon?.order <= 99">
+                                                #0{{pokemon?.order}}
+                                            </div>
+                                            <div *ngIf="pokemon?.order >= 100"> #{{pokemon?.order}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-------------BACK ARROW------------->
+
+                                <div fxLayout="row wrap" class="_back-arrow-row">
+                                    <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                                        <button mat-raised-button color="primary" (click)="onClickBackToList()">
+                                            <mat-icon aria-hidden="false">keyboard_return</mat-icon>
+                                            List
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-------------POKEMON PIC------------->
+
+                        <div fxLayout="row wrap" class="_pic-type-abilities-stats-row">
+                            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                                <app-pokemon-picture [pokemon]="pokemon"></app-pokemon-picture>
+                            </div>
+
+                            <!-------------POKEMON TYPE AND ABILITIES------------->
+
+                            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                                <div fxLayout="row wrap" class="_type-abilities-stats-row">
+                                    <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%"
+                                        class="_type-abilities-stats-col">
+                                        <app-pokemon-type-abilities [pokemon]="pokemon"></app-pokemon-type-abilities>
+
+                                        <!-------------POKEMON STATS------------->
+
+                                        <app-pokemon-stats [pokemon]="pokemon"></app-pokemon-stats>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-------------POKEMON EVOLUTIONS------------->
+
+                        <app-pokemon-evolutions *ngIf="evolutionForms?.length > 0" [pokemon]="pokemon"
+                            [evolutionForms]="evolutionForms"></app-pokemon-evolutions>
+
+                        <!-------------POKEMON MOVES------------->
+
+                        <app-pokemon-moves *ngIf="pokemon.moves?.length > 0" [pokemon]="pokemon"></app-pokemon-moves>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
